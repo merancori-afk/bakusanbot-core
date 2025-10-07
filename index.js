@@ -26,7 +26,7 @@ let usageData = fs.existsSync(usageFile) ? JSON.parse(fs.readFileSync(usageFile,
 // ------------------------------
 // 起動時
 // ------------------------------
-client.once('clientready', () => {
+client.once('ready', () => {
   console.log(`✅ ログイン完了: ${client.user.tag}`);
 });
 
@@ -128,6 +128,11 @@ client.on('interactionCreate', async (interaction) => {
     const configCmd = require('./commands/設定.js');
     return configCmd.execute(interaction, config);
   }
+
+if (interaction.commandName === '更新履歴') {
+  const changelogCmd = require('./commands/更新履歴.js');
+  return changelogCmd.execute(interaction);
+}
 });
 
 // ------------------------------
