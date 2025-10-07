@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
- 　 "start": "node index.js",
+    "start": "node index.js",
     "bot": "node index.js",
     "autopush": "node auto-push.js",
     "dev": "concurrently \"node index.js\" \"node auto-push.js\"",
