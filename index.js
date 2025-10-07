@@ -129,6 +129,13 @@ client.on('interactionCreate', async (interaction) => {
     return configCmd.execute(interaction, config);
   }
 
+　//第五人格要約コマンド
+if (interaction.commandName === '第五人格') {
+  const idvCmd = require('./commands/第五人格.js');
+  return idvCmd.execute(interaction);
+}
+
+  //更新履歴コマンド
 if (interaction.commandName === '更新履歴') {
   const changelogCmd = require('./commands/更新履歴.js');
   return changelogCmd.execute(interaction);

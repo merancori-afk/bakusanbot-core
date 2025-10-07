@@ -4,13 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+ 　 "start": "node index.js",
+    "bot": "node index.js",
+    "autopush": "node auto-push.js",
+    "dev": "concurrently \"node index.js\" \"node auto-push.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "axios": "^1.12.2",
+    "cheerio": "^1.1.2",
+    "chokidar": "^4.0.3",
     "discord.js": "^14.22.1",
     "dotenv": "^17.2.3"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
   }
 }
