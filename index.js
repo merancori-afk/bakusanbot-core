@@ -129,7 +129,7 @@ client.on('interactionCreate', async (interaction) => {
     return configCmd.execute(interaction, config);
   }
 
-　//第五人格要約コマンド
+  //第五人格要約コマンド
 if (interaction.commandName === '第五人格') {
   const idvCmd = require('./commands/第五人格.js');
   return idvCmd.execute(interaction);
@@ -145,6 +145,7 @@ if (interaction.commandName === '更新履歴') {
 // ------------------------------
 // ログイン
 // ------------------------------
+console.log("DISCORD_TOKEN length:", process.env.DISCORD_TOKEN?.length);
 client.login(process.env.DISCORD_TOKEN);
 
 // ------------------------------

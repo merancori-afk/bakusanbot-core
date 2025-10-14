@@ -34,14 +34,15 @@ const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN);
 
 (async () => {
   try {
-    console.log(`📡 ${commands.length} 件のスラッシュコマンドを登録します…`);
+    console.log(`📡 ${commands.length} 件のスラッシュコマンドを Global 登録します…`);
 
     await rest.put(
-      Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID),
+      Routes.applicationCommands(process.env.CLIENT_ID), // ← Global 登録に変更
       { body: commands },
     );
 
-    console.log('✅ スラッシュコマンドの登録が完了しました！');
+    console.log('✅ Global スラッシュコマンドの登録が完了しました！');
+    console.log('⚠️ 反映には最大1時間かかる場合があります');
   } catch (error) {
     console.error('❌ 登録失敗:', error);
   }
