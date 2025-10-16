@@ -1,6 +1,6 @@
 // 必要モジュール
 const fs = require('fs');
-const { Client, GatewayIntentBits } = require('discord.js');
+const { Client, GatewayIntentBits, MessageFlags } = require('discord.js');
 require('dotenv').config(); // ← 環境変数を使う前に必ずここで読み込む
 
 // Discordクライアント初期化
@@ -54,18 +54,18 @@ client.on('interactionCreate', async (interaction) => {
         const hours = Math.floor(remaining / (1000 * 60 * 60));
         const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
         return interaction.reply({
-          content: `💤 爆発装置は冷却中… あと **${hours}時間${minutes}分** 待ってね。`,
-          ephemeral: true,
-        });
+  content: `💤 爆発装置は冷却中… あと **${hours}時間${minutes}分** 待ってね。`,
+  flags: MessageFlags.Ephemeral,
+});
       }
     }
 
     const vc = interaction.member.voice.channel;
     if (!vc) {
       return interaction.reply({
-        content: 'VCにいないみたいだよ。VCに入ってから実行してね。',
-        ephemeral: true,
-      });
+  content: 'VCにいないみたいだよ。VCに入ってから実行してね。',
+  flags: MessageFlags.Ephemeral,
+});
     }
 
     await interaction.reply("💣 爆散シークエンス開始…");
