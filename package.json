@@ -20,7 +20,8 @@
     "chokidar": "^4.0.3",
     "discord.js": "^14.22.1",
     "dotenv": "^17.2.3",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "mongoose": "^9.1.2"
   },
   "devDependencies": {
     "concurrently": "^9.0.1"
